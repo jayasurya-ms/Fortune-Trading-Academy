@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import FTALogo from '../../assets/Logo/fortuneTradingLogo_black.png'
+import FTALogo from '../../assets/Icons/Logo_black.png'
 import Enquiry_Form from './Enquiry_Form'
 import locationIcon from '../../assets/Icons/location-icon.png'
 import clockIcon from '../../assets/Icons/clock-color-icon.png'
@@ -73,15 +73,6 @@ const ContactUsCombined = ({ titleColor, formTextColor, FbuttonFrom, FbuttonTo }
                                 </div>
                             </div>
                             <div className='w-full md:w-fit h-auto flex flex-col  md:justify-baseline md:items-baseline gap-8'>
-                                {/* <div className='w-full md:w-fit h-auto flex gap-3 justify-between items-center'>
-                                    <div className=' w-full flex justify-center items-center' >
-                                        <img src={mailIcon} alt="" className=' w-auto h-12 ' />
-                                    </div>
-                                    <div>
-                                        <h3 className='Inter text-sm md:tex-lg font-bold '>Email Address</h3>
-                                        <p className='Inter text-xs lg:text-sm'>example@gmail.com</p>
-                                    </div>
-                                </div> */}
                                 <div className='w-fit h-auto flex gap-3 justify-between'>
                                     <div className='flex justify-center items-center' >
                                         <img src={mailIcon} alt="" className=' w-10 h-10 md:w-12 md:h-12  ' />

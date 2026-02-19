@@ -25,6 +25,7 @@ import InrtaWFYicon3 from '/src/assets/Icons/icon3.png'
 import InrtaWFYicon4 from '/src/assets/Icons/icon4.png'
 import InrtaWFYicon5 from '/src/assets/Icons/icon5.png'
 import InrtaWFYicon6 from '/src/assets/Icons/icon6.png'
+import MentorIntro from '../Components/Mentor_Intro/MentorIntro'
 
 const contentData =[
     {
@@ -80,7 +81,7 @@ const FTAMainLandingPage = () => {
                 <Banner MainTitle={'Become a Pro Trader and Investor by joining our Stock Market Mentorship Program.'} Subtitle={"The place where you get 'COLLECTIVE WISDOM' in Financial Literacy to achieve your financial goals."} 
                 textFrom={'#E1E9FF'} textTo={'#8997C1'} radialFrom={'#A27BFF'} radialTo={'#080B12'} borderColor={'#080B12'} btnFrom={'#FBF5FF'} btnTo={'#E4CBF8'} btnColr={'#8829D0'} contactFrom={'#AD24FC'} contactTo={'#CA85FF'}  />
             </div>
-            <div className=' w-full h-auto bg-slate-50 pt-6 rounded-tl-4xl rounded-tr-4xl -mt-10 z-99'>
+            <div className=' w-full h-auto bg-slate-50 rounded-tl-4xl rounded-tr-4xl -mt-10 z-99 pt-10!'>
                 <div className='w-full h-auto px-2 flex flex-col gap-2 '>
                     <div className='w-fit h-auto leading-14 flex gap-0 sm:gap-1 flex-col items-center'>
                         <h2 className='Alatsi text-center text-[1.5rem] sm:text-[2.7rem] md:text-[3.1rem] m-0 leading-8 py-4 md:leading-14'>Who Can Learn</h2>
@@ -96,6 +97,9 @@ const FTAMainLandingPage = () => {
                     <div>
                         <Content datas={contentData}/>
                     </div>
+                </div>
+                <div className='w-full h-auto flex justify-center items-center pt-8! '>
+                    <MentorIntro from={'#bd89e6'} to={textColor} textColor={textColor} />
                 </div>
                 <div className='w-full h-auto'>
                     <KeyTakeaway  />

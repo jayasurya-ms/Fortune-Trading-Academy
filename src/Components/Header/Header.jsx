@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import FTAlogoWhite from '../../assets/Logo/fortuneTradingLogo_white.png'
-import FTAMainPageLogo from '../../assets/Icons/FTALOGO_MainPage.png'
+import FTAMainPageLogo from '../../assets/Icons/Logo_white.png'
 import { FiPhone } from 'react-icons/fi';
 import { RiCloseLine, RiMenu3Line } from 'react-icons/ri';
 import { DataCollections } from '../../Store/GlobalDataSets';

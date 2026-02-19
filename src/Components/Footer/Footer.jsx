@@ -1,10 +1,9 @@
 import React, { useContext } from 'react'
-import FTALogoWhite from '../../assets/Logo/fortuneTradingLogo_white.png'
 import ytLogo from '../../assets/Icons/youtube_icon.png'
 import linkedinLogo from '../../assets/Icons/LinkedIn_icon.png'
 import instaLogo from '../../assets/Icons/Instagram_icon.png'
 import facebookLogo from '../../assets/Icons/facebook_icon.png'
-import FTAMainPageLogo from '../../assets/Icons/FTALOGO_MainPage.png'
+import FTAMainPageLogo from '../../assets/Icons/Logo_white.png'
 import { DataCollections } from '../../Store/GlobalDataSets'
 import { useNavigate } from 'react-router'
 

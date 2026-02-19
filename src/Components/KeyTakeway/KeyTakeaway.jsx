@@ -179,7 +179,7 @@ const KeyTakeaway = () => {
     return (
         <div className='h-auto w-full'>
         <div className='w-full h-auto relative'>
-            <div className='absolute size-full -z-10'>
+            <div className='absolute size-full'>
                 <img src={bgLine} className='size-full' alt="bg-line"/>
             </div>
             <div className='w-full h-auto pt-16 flex flex-col items-center md:gap-24 lg:gap-0 overflow-hidden'>

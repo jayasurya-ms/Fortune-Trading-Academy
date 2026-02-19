@@ -1,2 +1,7 @@
 @import "tailwindcss";
 
+
+.beginner-slider .slick-prev:before,
+.beginner-slider .slick-next:before {
+    color: #0BB759 !important;
+}
