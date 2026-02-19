@@ -1,0 +1,50 @@
+/* 1. Header & Arrow (Kept from your previous working part) */
+.accordion-header button {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    background: transparent !important;
+    color: white !important;
+    border: none !important;
+    padding: 1.5rem 2rem !important;
+    box-shadow: none !important;
+    cursor: pointer;
+    text-align: left;
+}
+
+.accordion-header button::after {
+    content: '▼';
+    font-size: 0.9rem;
+    color: #a855f7; 
+    transition: transform 0.3s ease-in-out !important;
+    margin-left: auto;
+    background-image: none !important;
+}
+
+.accordion-header button:not(.collapsed)::after {
+    transform: rotate(180deg);
+}
+
+/* 2. THE FIX: Hide them by default */
+.accordion-collapse {
+    display: none; /* This stops them all from being open at once */
+}
+
+/* 3. Show only the active one */
+.accordion-collapse.show {
+    display: block;
+}
+
+/* 4. The Animation Logic (Simultaneous Slide) */
+.collapsing {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.35s ease !important;
+    display: block !important; /* Forces block during the move */
+}
+
+.accordion-item {
+    background-color: transparent !important;
+}

@@ -1,0 +1,106 @@
+@font-face {
+    font-family: Alatsi;
+    src: url('../../Fonts/Alatsi-Regular.ttf');
+}
+
+.Alatsi{
+    font-family: "Alatsi";
+}
+
+@font-face {
+    font-family: Chivo;
+    src: url('../../Fonts/Chivo-VariableFont_wght.ttf');
+}
+
+.Chivo{
+    font-family: "Chivo";
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url('../../Fonts/Roboto-VariableFont_wdth,wght.ttf');
+}
+
+.Roboto{
+    font-family: "Roboto";
+}
+
+@font-face {
+    font-family: Inter;
+    src: url('../../Fonts/Inter-VariableFont_opsz,wght.ttf');
+}
+
+.Inter{
+    font-family: "Inter";
+}
+
+@font-face {
+    font-family: poppins;
+    src: url('../../Fonts/Poppins-Regular.ttf.ttf');
+}
+
+.poppins{
+    font-family: "poppins";
+}
+@font-face {
+    font-family: poppins-medium;
+    src: url('../../Fonts/Poppins-Medium.ttf');
+}
+
+.poppins-medium{
+    font-family: "poppins-medium";
+}
+
+@font-face {
+    font-family: poppins-bold;
+    src: url('../../Fonts/Poppins-Bold.ttf');
+}
+
+.poppins-bold{
+    font-family: "poppins-bold";
+}
+
+@font-face {
+    font-family: poppins-semibold;
+    src: url('../../Fonts/Poppins-SemiBold.ttf');
+}
+
+.poppins-semibold{
+    font-family: "poppins-semibold";
+}
+
+
+@font-face {
+    font-family: poppins-light;
+    src: url('../../Fonts/Poppins-Light.ttf');
+}
+
+.poppins-light{
+    font-family: "poppins-light";
+}
+
+@font-face {
+    font-family: poppins-extralight;
+    src: url('../../Fonts/Poppins-ExtraLight.ttf');
+}
+
+.poppins-extralight{
+    font-family: "poppins-extralight";
+}
+
+@font-face {
+    font-family: poppins-extrabold;
+    src: url('../../Fonts/Poppins-ExtraBold.ttf');
+}
+
+.poppins-extrabold{
+    font-family: "poppins-extrabold";
+}
+@font-face {
+    font-family: poppins-thin;
+    src: url('../../Fonts/Poppins-Thin.ttf');
+}
+
+.poppins-thin{
+    font-family: "poppins-thin";
+}
