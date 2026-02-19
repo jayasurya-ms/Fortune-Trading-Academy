@@ -22,43 +22,43 @@ import Content from '../Components/Banner/Content'
 const contentData =[
     {
         id: 1,
-        title: 'Beginner Investors',
-        description: 'People new to investing / No prior market knowledge',
+        title: 'Stock Selection Techniques',
+        description: 'Learn how to identify strong stocks with high potential using market trends, volume analysis, and fundamental & technical filters.',
         icon: InrtaWFYicon1,
     },
     {
         id: 2,
-        title: 'Entrepreneurs and Business Owners',
-        description: 'Startup founders / Small & medium business owners',
+        title: 'Analysing Key Ratios of a Stock & Sector',
+        description: 'Learn the principles of value investing to find undervalued stocks with long-term potential.',
         icon: InrtaWFYicon2,
     },
     {
         id: 3,
-        title: 'Financial Advisors and Professionals',
-        description: 'Finance professionals / Advisors, analysts, consultants',
+        title: 'Understanding Balance Sheets',
+        description: 'Break down balance sheets into simple, easy-to-understand parts.',
         icon: InrtaWFYicon3,
     },
     {
         id: 4,
-        title: 'Students and Young Adults',
-        description: 'Young professionals starting their careers / Learn wealth-building fundamentals',
+        title: 'Supply & Demand Scenarios with Business Cycles',
+        description: 'Understand how supply and demand impact stock prices.',
         icon: InrtaWFYicon4,
     },
     {
         id: 5,
-        title: 'Individuals Seeking Passive Income',
-        description: 'Long-term investors / People aiming for secondary income',
+        title: 'Mastering Value Investing & Other Investment Techniques',
+        description: 'Learn the principles of value investing to find undervalued stocks with long-term potential.',
         icon: InrtaWFYicon5,
     },
     {
         id: 6,
-        title: 'Professionals & Curious Individuals',
-        description: 'Working professionals / Learners exploring finance out of curiosity',
+        title: 'Chart Patterns with Support & Resistance',
+        description: 'Understand common chart patterns and use them to make better entry and exit decisions.',
         icon: InrtaWFYicon6,
     }
 ]
 
-const ArtOfInvestment = ({ btnColor }) => {
+const ArtOfInvestment = () => {
 
     let storeObj = useContext(DataCollections)
     useEffect(()=>{
@@ -72,7 +72,7 @@ const ArtOfInvestment = ({ btnColor }) => {
                  textFrom={'#EDF8FF'} textTo={'#D1EDFF'} radialFrom={'#215E86'} radialTo={'#0E171C'} borderColor={'#215E86'} btnFrom={'#F5FBFF'} btnTo={'#E2F3FF'} btnColr={'#215E86'} contactFrom={'#0F2C3F'} contactTo={'#215E86'}  />
             </div>
             <div className=' w-full h-auto bg-slate-50 py-6 rounded-tl-4xl rounded-tr-4xl -mt-10 z-99 '>
-                <div className='w-full h-auto px-2 flex flex-col gap-14 '>
+                <div className='w-full h-auto px-2 flex flex-col gap-5 '>
                     <div className='w-fit h-auto leading-14 flex gap-1 flex-col items-center'>
                         <h2 className='Alatsi text-center text-[2.7rem] md:text-[3.1rem] m-0 leading-8 py-4 md:leading-14'>What is in it for </h2>
                         <h1 className='Alatsi text-[3.5rem]  md:text-[4.1rem] font-medium m-0 text-[#2076AF]  text-shadow-md text-shadow-slate-500/10'>You ?</h1>

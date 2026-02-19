@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useRef } from 'react'
 import { DataCollections } from '../../Store/GlobalDataSets'
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
@@ -12,9 +12,68 @@ const WEEK_DATA = Array.from({ length: 18 }, (_, i) => ({
 const EnrollNow = () => {
     let store = useContext(DataCollections)
     const [openWeek, setOpenWeek] = useState(null);
+    
+    // --- SCROLL & DRAG LOGIC ---
+    const scrollRef = useRef(null);
+    const itemRefs = useRef([]); // To track each week's position
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+    const [dragDistance, setDragDistance] = useState(0);
+
+    const handleMouseDown = (e) => {
+        setIsDragging(true);
+        setDragDistance(0);
+        setStartX(e.pageX - scrollRef.current.offsetLeft);
+        setScrollLeft(scrollRef.current.scrollLeft);
+    };
+
+    const handleMouseLeave = () => {
+        setIsDragging(false);
+    };
+
+    const handleMouseUp = () => {
+        setIsDragging(false);
+    };
+
+    const handleMouseMove = (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startX) * 2; 
+        setDragDistance(Math.abs(x - startX)); // Track movement distance
+        scrollRef.current.scrollLeft = scrollLeft - walk;
+    };
 
     const toggleWeek = (id) => {
-        setOpenWeek(openWeek === id ? null : id);
+        if (dragDistance > 10) return;
+
+        const isOpening = openWeek !== id;
+        setOpenWeek(isOpening ? id : null);
+
+        if (isOpening) {
+            setTimeout(() => {
+                const container = scrollRef.current;
+                const element = itemRefs.current[id];
+
+                if (container && element) {
+                    // 1. Calculate the right edge of the container
+                    const containerRight = container.scrollLeft + container.offsetWidth;
+                    
+                    // 2. Calculate the right edge of the expanded element 
+                    // We add a 'buffer' (e.g., 40px) to ensure the shadow/padding is visible
+                    const elementRight = element.offsetLeft + element.offsetWidth + 20;
+
+                    // 3. Only scroll if the element's edge is actually off-screen
+                    if (elementRight > containerRight) {
+                        container.scrollTo({
+                            left: elementRight - container.offsetWidth,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            }, 200); // Increased timeout slightly to ensure width expansion is accounted for
+        }
     };
 
     return (
@@ -31,18 +90,24 @@ const EnrollNow = () => {
             </div>
 
             <div className="w-full mx-auto p-6">                
-                {/* Horizontal Scroll Container */}
-                <div className="flex flex-row items-center overflow-x-auto gap-4 md:gap-6 pb-12 hide-scrollbar h-full">
+                <div 
+                    ref={scrollRef}
+                    onMouseDown={handleMouseDown}
+                    onMouseLeave={handleMouseLeave}
+                    onMouseUp={handleMouseUp}
+                    onMouseMove={handleMouseMove}
+                    className={`flex flex-row items-center overflow-x-auto gap-4 md:gap-6 pb-12 hide-scrollbar h-full ${isDragging ? 'cursor-grabbing select-none' : 'cursor-grab'}`}
+                >
                     {WEEK_DATA.map((week) => (
                         <div 
                             key={week.id} 
-                            className="relative flex flex-row items-center shrink-0 h-72 md:h-80"
+                            ref={el => itemRefs.current[week.id] = el} // Store reference
+                            style={{ backgroundImage: `radial-gradient(circle at 50% 100%,#483162 , #925CBE )` }}
+                            className="relative flex flex-row items-center shrink-0 h-72 md:h-80 rounded-[2.5rem] shadow-2xl"
                         >
-                            {/* Vertical Pill Button */}
                             <button
                                 onClick={() => toggleWeek(week.id)}
-                                className="relative w-12 h-full md:w-16 flex flex-col items-center justify-between py-8 rounded-full shadow-lg z-20 shrink-0"
-                                style={{ backgroundImage: `radial-gradient(circle at 50% 100%,#483162 , #925CBE )` }}
+                                className="relative w-12 h-full md:w-16 flex flex-col items-center justify-between py-8 z-20 shrink-0"
                             >
                                 <motion.div
                                     animate={{ rotate: openWeek === week.id ? 90 : 0 }}
@@ -57,16 +122,15 @@ const EnrollNow = () => {
                                 </span>
                             </button>
 
-                            {/* Description Box - Absolute Positioned to prevent layout "struck" feeling */}
                             <AnimatePresence>
                                 {openWeek === week.id && (
                                     <motion.div
                                         initial={{ opacity: 0, x: 0 }}
-                                        animate={{ opacity: 1, x: 60 }} // Slides out slightly without pushing others
+                                        animate={{ opacity: 1, x: 45 }} 
                                         exit={{ opacity: 0, x: 0 }}
                                         transition={{ duration: 0.3, ease: "easeOut" }}
-                                        className="absolute left-0 h-[95%] overflow-hidden text-white p-6 md:p-8 rounded-[2.5rem] shadow-2xl z-10 flex items-center w-55 md:w-70" 
-                                        style={{ backgroundImage: `radial-gradient(circle at 50% 100%,#483162 , #925CBE )` }}
+                                        className="absolute left-0 h-[95%] overflow-hidden text-white p-6 z-10 flex items-center w-55 md:w-70" 
+                                        // style={{ backgroundImage: `radial-gradient(circle at 50% 100%,#483162 , #925CBE )` }}
                                     >
                                         <div className="min-w-43 md:min-w-53">
                                             <p className="Chivo text-[13px] md:text-[14px] leading-relaxed font-light opacity-90">
@@ -77,7 +141,6 @@ const EnrollNow = () => {
                                 )}
                             </AnimatePresence>
                             
-                            {/* Spacer to maintain gap even when closed */}
                             <div className={`${openWeek === week.id ? 'w-58 md:w-73' : 'w-0'} transition-all duration-300`} />
                         </div>
                     ))}

@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { DataCollections } from '../../Store/GlobalDataSets'
 
 const CampusTourBookingHookDiv = ({color,from,to}) => {
+
+  let store = useContext(DataCollections)
   // let color = '#0D8E47'
 
   return (
@@ -11,7 +14,7 @@ const CampusTourBookingHookDiv = ({color,from,to}) => {
           <h1 className={`Alatsi lg:text-6xl text-5xl `} style={{color:color}}>Bangalore</h1>
         </div>
         <div className='lg:w-[40%] w-full flex justify-center lg:justify-end items-center'>
-          <button className='Alatsi lg:text-xl  rounded-full px-8 py-4 lg:px-12 lg:py-6 text-white bg-linear-to-b from-black to-[#0D8E47] cursor-pointer' style={{backgroundImage: `linear-gradient(to bottom, ${from}, ${to})`}}>Book a Campus Tour</button>
+          <button onClick={() => store.handleShow()} className='Alatsi lg:text-xl  rounded-full px-8 py-4 lg:px-12 lg:py-6 text-white bg-linear-to-b from-black to-[#0D8E47] cursor-pointer' style={{backgroundImage: `linear-gradient(to bottom, ${from}, ${to})`}}>Book a Campus Tour</button>
         </div>
       </div>
     </div>

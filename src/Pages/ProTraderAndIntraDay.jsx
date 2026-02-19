@@ -18,6 +18,46 @@ import Banner from '../Components/Banner/Banner'
 import WhySwingAndIntraDay from '../Components/ProtraderIntraDay/WhySwingAndIntraDay'
 import { DataCollections } from '../Store/GlobalDataSets'
 import MentorIntro from '../Components/Mentor_Intro/MentorIntro'
+import Content from '../Components/Banner/Content'
+
+const contentData =[
+    {
+        id: 1,
+        title: 'Stock Selection Techniques',
+        description: 'Learn how to identify strong stocks with high potential using market trends, volume analysis, and fundamental & technical filters.',
+        icon: InrtaWFYicon1,
+    },
+    {
+        id: 2,
+        title: 'Identifying Entry & Exit Using Price Action',
+        description: 'Master price action concepts to find accurate entry and exit points.',
+        icon: InrtaWFYicon2,
+    },
+    {
+        id: 3,
+        title: 'Preparing You for Trading Psychology',
+        description: 'Build habits to stay calm, stick to your plan, and make rational decisions under pressure.',
+        icon: InrtaWFYicon3,
+    },
+    {
+        id: 4,
+        title: 'Trading Indicators (RSI, Moving Averages, Pivot Points)',
+        description: 'Learn how and when to use indicators, and how to combine them without confusion.',
+        icon: InrtaWFYicon4,
+    },
+    {
+        id: 5,
+        title: 'Trading Strategies (Intraday, Swing & More)',
+        description: 'Learn when to use which strategy based on market conditions and your risk profile',
+        icon: InrtaWFYicon5,
+    },
+    {
+        id: 6,
+        title: 'Technical Analysis & Chart Patterns',
+        description: 'Move from beginner to pro-level chart analysis with real examples.',
+        icon: InrtaWFYicon6,
+    }
+]
 
 
 const ProTraderAndIntraDay = () => {
@@ -41,7 +81,7 @@ const ProTraderAndIntraDay = () => {
                     textFrom={'#FFF8DD'} textTo={'#FFF2BB'} radialFrom={'#D5B42D'} radialTo={'#121108'} borderColor={'#D5B42D'} btnFrom={'#FFFBEB'} btnTo={'#FFF8DD'} btnColr={'#AC790D'} contactFrom={'#AC790D'} contactTo={'#D5B42D'} />
             </div>
             <div className=' w-full h-auto bg-slate-50 py-6 rounded-tl-4xl rounded-tr-4xl -mt-10 z-99 '>
-                <div className='w-full h-auto px-2 flex flex-col gap-14 '>
+                <div className='w-full h-auto px-2 flex flex-col gap-5 '>
                     <div className='w-fit h-auto leading-14 flex gap-1 flex-col items-center'>
                         <h2 className='Alatsi text-center text-[2.7rem] md:text-[3.1rem] m-0 leading-8 py-4 md:leading-14'>What is in it for </h2>
                         <h1 className='Alatsi text-[3.5rem]  md:text-[4.1rem] font-medium m-0 text-[#D5B42D]  text-shadow-md text-shadow-slate-500/10'>You ?</h1>
@@ -52,89 +92,8 @@ const ProTraderAndIntraDay = () => {
                             </p>
                         </div>
                     </div>
-                    <div className='w-full h-auto flex flex-col gap-6 lg:gap-14'>
-                        <div className='w-full h-auto flex flex-col gap-6 lg:flex-row justify-center items-center lg:justify-around'>
-                            <div className='w-fit h-auto'>
-                                <div className='w-fit h-auto flex justify-center items-center  gap-4'>
-                                    <div className='w-fit h-auto'>
-                                        <img src={InrtaWFYicon1} alt="" className='w-14 h-14 md:w-24 md:h-24' />
-                                    </div>
-                                    <div className=' h-auto flex flex-col  gap-1 w-[13rem] md:w-[20rem]'>
-                                        <h3 className='Alatsi text-[1rem] md:text-2xl w-[13rem] md:w-76 '>Stock Selection Techniques</h3>
-                                        <p className='Chivo text-[.65rem] md:text-[.925rem]   text-black/40 leading-4.5'>Learn how to identify
-                                            strong stocks with high potential using market trends, volume analysis, and fundamental & technical filters.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='w-fit h-auto'>
-                                <div className='w-fit h-auto flex justify-center items-center  gap-4'>
-                                    <div className='w-fit h-auto'>
-                                        <img src={InrtaWFYicon2} alt="" className='w-14 h-14 md:w-24 md:h-24' />
-                                    </div>
-                                    <div className=' h-auto flex flex-col  gap-1  w-[13rem] md:w-[20rem]'>
-                                        <h3 className='Alatsi text-[1rem] md:text-2xl w-[13rem] md:w-76  '>Identifying Entry & Exit Using Price Action</h3>
-                                        <p className='Chivo text-[.65rem] md:text-[.925rem]   text-black/40 leading-4.5'>Master price action concepts to
-                                            find accurate entry and exit points.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='w-fit h-auto'>
-                                <div className='w-fit h-auto flex justify-center items-center  gap-4'>
-                                    <div className='w-fit h-auto'>
-                                        <img src={InrtaWFYicon3} alt="" className='w-14 h-14 md:w-24 md:h-24' />
-                                    </div>
-                                    <div className=' h-auto flex flex-col  gap-1  w-[13rem] md:w-[20rem]'>
-                                        <h3 className='Alatsi text-[1rem] md:text-2xl w-[13rem] md:w-76 '>Preparing You for Trading Psychology</h3>
-                                        <p className='Chivo text-[.65rem] md:text-[.925rem]   text-black/40 leading-4.5'>Build habits to stay calm, stick to your plan,
-                                            and make rational decisions under pressure.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='w-full h-auto flex flex-col gap-6 lg:flex-row justify-center items-center lg:justify-around'>
-                            <div className='w-fit h-auto'>
-                                <div className='w-fit h-auto flex justify-center items-center  gap-4'>
-                                    <div className='w-fit h-auto'>
-                                        <img src={InrtaWFYicon4} alt="" className='w-14 h-14 md:w-24 md:h-24' />
-                                    </div>
-                                    <div className=' h-auto flex flex-col  gap-1  w-[13rem] md:w-[20rem]'>
-                                        <h3 className='Alatsi text-[1rem] md:text-2xl w-[13rem] md:w-76  '>Trading Indicators (RSI, Moving Averages, Pivot Points)</h3>
-                                        <p className='Chivo text-[.65rem] md:text-[.925rem]   text-black/40 leading-4.5'>Learn how and when to use indicators,
-                                            and how to combine them without confusion.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='w-fit h-auto'>
-                                <div className='w-fit h-auto flex justify-center items-center  gap-4'>
-                                    <div className='w-fit h-auto'>
-                                        <img src={InrtaWFYicon5} alt="" className='w-14 h-14 md:w-24 md:h-24' />
-                                    </div>
-                                    <div className=' h-auto flex flex-col  gap-1  w-[13rem] md:w-[20rem]'>
-                                        <h3 className='Alatsi text-[1rem] md:text-2xl w-[13rem] md:w-76 '>Trading Strategies (Intraday, Swing & More)</h3>
-                                        <p className='Chivo text-[.65rem] md:text-[.925rem]   text-black/40 leading-4.5'>Learn when to use which strategy based
-                                            on market conditions and your risk profile
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='w-fit h-auto'>
-                                <div className='w-fit h-auto flex justify-center items-center  gap-4'>
-                                    <div className='w-fit h-auto'>
-                                        <img src={InrtaWFYicon6} alt="" className='w-14 h-14 md:w-24 md:h-24' />
-                                    </div>
-                                    <div className=' h-auto flex flex-col  gap-1  w-[13rem] md:w-[20rem]'>
-                                        <h3 className='Alatsi text-[1rem] md:text-2xl w-[13rem] md:w-76 '>Technical Analysis & Chart Patterns</h3>
-                                        <p className='Chivo text-[.65rem] md:text-[.925rem]   text-black/40 leading-4.5'>Move from beginner to pro-level
-                                            chart analysis with real examples.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div>
+                        <Content  datas={contentData}/>
                     </div>
                     <div className='w-full h-auto'>
                         <div className='w-full h-auto py-8  flex justify-center items-center'>
