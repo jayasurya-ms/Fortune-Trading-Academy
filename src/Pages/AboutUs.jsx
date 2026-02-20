@@ -12,6 +12,7 @@ import Footer from '../Components/Footer/Footer'
 import { DataCollections } from '../Store/GlobalDataSets'
 import MentorIntro from '../Components/Mentor_Intro/MentorIntro'
 import { Helmet } from 'react-helmet-async'
+import VisionMission from '../Components/AboutUs/VisionMission'
 
 const AboutUs = ({ btnColor }) => {
 
@@ -45,14 +46,17 @@ const AboutUs = ({ btnColor }) => {
                  textFrom={'#ffedfd'} textTo={'#ffedfd'} radialFrom={'#610556'} radialTo={'#170511'} borderColor={'#ca3cba'} btnFrom={'#ffedfd'} btnTo={'#ffedfd'} btnColr={'#ca3cba'} contactFrom={'#711a67'} contactTo={'#ca3cba'}  />
             </div>
             <div className=' w-full h-auto bg-slate-50 py-6 rounded-tl-4xl rounded-tr-4xl -mt-10 z-99 md:p-4 '>
-                <div className='w-full h-auto px-2 md:px-8'>
-                    <WhyAOI titleColor={'#ca3cba'} from={'#711a67'} to={'#170511'}/>
-                </div>
-                <div className='w-full h-auto px-2 md:px-8'>
-                    <WhyFTA title={'ART OF INVESTMENT COURSE?'} titleColor={'#711a67'} />
+                <div className='w-full h-auto px-2 md:px-8 md:pt-10'>
+                    <WhyFTA title={'ART OF INVESTMENT COURSE?'} titleColor={'#98248b'} />
                 </div>
                 <div className='w-full h-auto flex items-center justify-center py-8'>
-                    <MentorIntro from={'#711a67'} to={'#711a67'} textColor={'#711a67'} />
+                    <MentorIntro from={'#98248b'} to={'#98248b'} textColor={'#98248b'} />
+                </div>
+                <div className=' w-full h-auto md:p-10'>
+                    <VisionMission />
+                </div>
+                <div className='w-full h-auto px-2 md:px-8'>
+                    <WhyAOI titleColor={'#ca3cba'} from={'#98248b'} to={'#170511'}/>
                 </div>
                 <div className='w-full h-auto'>
                     <Syllabus textColor={'#711a67'} from={'#711a67'} to={'#170511'} borderColor={'#711a67'} />

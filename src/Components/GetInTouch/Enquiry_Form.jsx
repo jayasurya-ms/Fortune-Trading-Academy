@@ -14,7 +14,7 @@ const Enquiry_Form = ({ enroll, formHeading, headingColor, from, to }) => {
 
 
     return (
-        <div className={`h-auto shadow rounded-xl  border border-slate-500/30 flex flex-col gap-5 justify-center py-5 px-4 lg:px-12 w-full ${enroll || store.currentPage == 'MainPage' ? ' bg-white/10 backdrop-blur-md' : ' md:w-[70%] bg-white'} rounded-xl`} >
+        <div className={` bg-purple-600 h-auto shadow rounded-xl  border border-slate-500/30 flex flex-col gap-2 justify-center py-5 px-4 lg:px-10 w-full ${enroll || store.currentPage == 'MainPage' ? ' bg-white/10 backdrop-blur-md' : ' md:w-[80%] bg-white'} rounded-xl`} >
             <div className='w-full h-auto'>
                 <h2 className={`${enroll ? 'text-2xl' : 'text-2xl lg:text-3xl'} Alatsi text-center text-[#2076AF]`} style={{ color: headingColor }}>{formHeading ? formHeading : 'Get In Touch'}</h2>
             </div>

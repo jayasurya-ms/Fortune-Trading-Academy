@@ -98,7 +98,7 @@ const ContactUsCombined = ({ titleColor, formTextColor, FbuttonFrom, FbuttonTo }
                         </div>
                     </div>
                 </div>
-                <div className='w-full lg:w-[50%] h-auto flex items-center justify-center'>
+                <div className='w-full lg:w-[50%] h-auto flex items-center justify-center xl:ps-10'>
                     <Enquiry_Form from={FbuttonFrom} to={FbuttonTo} headingColor={formTextColor} />
                 </div>
             </div>

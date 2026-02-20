@@ -117,7 +117,7 @@ const homeSchema = {
                 <div className='w-full h-auto px-2 flex flex-col gap-2 '>
                     <div className='w-fit h-auto leading-14 flex gap-0 sm:gap-1 flex-col items-center'>
                         <h2 className='Alatsi text-center text-[1.5rem] sm:text-[2.7rem] md:text-[3.1rem] m-0 leading-8 py-4 md:leading-14'>Who Can Learn</h2>
-                        <h1 className='Alatsi text-[2.5rem] text-center max-sm:leading-9 sm:text-[3.5rem]  md:text-[4.1rem] font-medium m-0 text-[#994CD4]  text-shadow-md text-shadow-slate-500/10'>Stock Market Course ?</h1>
+                        <h1 className='Alatsi text-[2rem] text-center max-sm:leading-9 sm:text-[3.5rem]  md:text-[4.1rem] font-medium m-0 text-[#994CD4]  text-shadow-md text-shadow-slate-500/10'>Stock Market Course ?</h1>
                         <div className='w-full md:w-[80%] px-2 md:px-0 py-4 '>
                             <p className='Chivo text-[.85rem] md:text-[.9rem] text-justify md:text-center leading-6 md:leading-5'>Stock market learning is for everyone from beginner investors
                                 seeking to grow their wealth and students aiming to build financial literacy, to entrepreneurs leveraging market insights for business growth. It’s ideal for advisors refining
