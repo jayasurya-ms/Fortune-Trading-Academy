@@ -81,7 +81,8 @@ const ContactUsCombined = ({ titleColor, formTextColor, FbuttonFrom, FbuttonTo }
                                         <h3 className='Inter text-sm md:tex-lg font-bold '>Email Address</h3>
                                         <p className='Inter text-xs lg:text-sm'>example@gmail.com</p>
                                     </div>
-                                </div>                                <div className='w-fit h-auto flex gap-3 justify-between'>
+                                </div>                                
+                                <div className='w-fit h-auto flex gap-3 justify-between'>
                                     <div className='flex justify-center items-start' >
                                         <img src={clockIcon} alt="" className=' w-10 h-10 md:w-12 md:h-12  ' />
                                     </div>

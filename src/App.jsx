@@ -19,13 +19,13 @@ function App() {
         <EnrolFormModel/>
         <Routes>
           <Route path='/' element={<FTAMainLandingPage />} />
-          <Route path='/ArtOfInvestment' element={<ArtOfInvestment />} />   
-          <Route path='/FutureTrading' element={<ExpertFutureTrading />} />
-          <Route path='/OptionTrading' element={<ExpertOptionTrading />} />
-          <Route path='/StockMarket_Beginners' element={<FTA_StockMarket_Beginner />} />
-          <Route path='/OnlineCourse' element={<OnlineTradingCourse />} />
-          <Route path='/IntraDayTrading' element={<ProTraderAndIntraDay />} />
-          <Route path='/AboutUs' element={<AboutUs />}/>
+          <Route path='/art_of_investment' element={<ArtOfInvestment />} />   
+          <Route path='/future_trading' element={<ExpertFutureTrading />} />
+          <Route path='/option_trading' element={<ExpertOptionTrading />} />
+          <Route path='/stock_market' element={<FTA_StockMarket_Beginner />} />
+          <Route path='/online_course' element={<OnlineTradingCourse />} />
+          <Route path='/pro_trader' element={<ProTraderAndIntraDay />} />
+          <Route path='/about_us' element={<AboutUs />}/>
         </Routes>
       </BrowserRouter>
     </>

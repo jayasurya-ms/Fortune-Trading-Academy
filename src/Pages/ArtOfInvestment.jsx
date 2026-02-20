@@ -18,6 +18,7 @@ import Footer from '../Components/Footer/Footer'
 import { DataCollections } from '../Store/GlobalDataSets'
 import MentorIntro from '../Components/Mentor_Intro/MentorIntro'
 import Content from '../Components/Banner/Content'
+import { Helmet } from 'react-helmet-async'
 
 const contentData =[
     {
@@ -60,13 +61,37 @@ const contentData =[
 
 const ArtOfInvestment = () => {
 
+    const handleShow = () => {
+        console.log('inside show');
+
+    }
+
     let storeObj = useContext(DataCollections)
     useEffect(()=>{
         storeObj.setCurrentPage('ArtOfInvestment')
     },[])
 
+    const investmentSchema = {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Art of Investment",
+      "description": "Learn the principles of long-term wealth creation and portfolio diversification.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Fortune Trading Academy",
+        "url": "https://www.fortunetradingacademy.com"
+      }
+    };
+
     return (
         <div className='w-full h-auto flex flex-col'>
+
+            {/* helmet */}
+            <Helmet>
+              <title>Expert Option Trading | Fortune Trading Academy</title>
+              <script type="application/ld+json">{JSON.stringify(investmentSchema)}</script>
+            </Helmet> 
+
             <div className='w-full h-auto'>
                 <Banner MainTitle={'Art Of Investment'} Subtitle={'Stock trading offers many advantages, including the potential for high returns, liquidity, diversification and accessibility. Stocks have historically offered attractive long-term returns compared to other asset classes, making stock trading a popular choice for growth investors.'}
                  textFrom={'#EDF8FF'} textTo={'#D1EDFF'} radialFrom={'#215E86'} radialTo={'#0E171C'} borderColor={'#215E86'} btnFrom={'#F5FBFF'} btnTo={'#E2F3FF'} btnColr={'#215E86'} contactFrom={'#0F2C3F'} contactTo={'#215E86'}  />
@@ -88,20 +113,20 @@ const ArtOfInvestment = () => {
                     </div>
                     <div className='w-full h-auto'>
                         <div className='w-full h-auto py-8  flex justify-center items-center'>
-                            <button className='w-fit h-fit Alatsi text-[1.25rem] text-white py-6 px-12 rounded-full bg-radial-[at_50%_150%] from-[#215E86] to-[#0E171C] '>Book a Campus Tour</button>
+                            <button onClick={() => storeObj.handleShow()} className='cursor-pointer w-fit h-fit Alatsi text-[1.25rem] text-white py-6 px-12 rounded-full bg-radial-[at_50%_150%] from-[#215E86] to-[#0E171C] ease-in-out duration-300' onMouseOver={(e) => e.currentTarget.style.boxShadow = `0 0 15px 2px #215E86`} onMouseOut={(e) => e.currentTarget.style.boxShadow = `0 0 0 0`}>Book a Campus Tour</button>
                         </div>
                     </div>
                 </div>
                 <div className='w-full h-auto px-2 md:px-8'>
-                    <WhyAOI />
+                    <WhyAOI from={'#215E86'} titleColor={'#2076AF'} to={'#0E171C'}/>
                 </div>
-                <div className='w-full h-auto px-2 md:px-8'>
+                <div className='w-full h-auto px-2 md:p-8'>
                     <WhyFTA title={'ART OF INVESTMENT COURSE?'} titleColor={'#2076AF'} />
                 </div>
-                <div className='w-full h-auto flex items-center justify-center py-8'>
+                <div className='w-full h-auto flex items-center justify-center pb-8'>
                     <MentorIntro from={'#2076AF59'} to={'#2076AF33'} textColor={'#2076AF'} />
                 </div>
-                <div className='w-full h-auto -mt-120 sm:-mt-85 lg:-mt-40 '>
+                <div className='w-full h-auto '>
                     <Syllabus textColor={'#2076AF'} from={'#215E86'} to={'#0E171C'} borderColor={'#2076AF'} />
                 </div>
                 <div className='w-full h-auto'>

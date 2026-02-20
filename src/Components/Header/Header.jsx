@@ -33,12 +33,12 @@ const Header = ({ contactBtnFrom, contactBtnTo }) => {
                 {/* SLIDE-IN MENU */}
                 <div className={`navContainer ${menuOpen ? "navOpen" : ""}`}>
                     <div className="navLinks flex gap-5 text-[16px] font-bold">
-                        <a><h2 className="cursor-pointer text-white/80" onClick={() => navigate('/StockMarket_Beginners')}>Stock Market Course</h2></a>
-                        <a><h2 className="cursor-pointer text-white/80" onClick={() => navigate('/IntraDayTrading')}>Pro Trader And Intra Day</h2></a>
-                        <a><h2 className="cursor-pointer text-white/80" onClick={() => navigate('/ArtOfInvestment')}>Investment</h2></a>
-                        <a><h2 className="cursor-pointer text-white/80" onClick={() => navigate('/OnlineCourse')}>Online Trading</h2></a>
-                        <a><h2 className="cursor-pointer text-white/80" onClick={() => navigate('/FutureTrading')}>Future Trading</h2></a>
-                        <a><h2 className="cursor-pointer text-white/80" onClick={() => navigate('/OptionTrading')}>Option Trading</h2></a>
+                        <a><h2 className="cursor-pointer text-white/80" onClick={() => navigate('/stock_market')}>Stock Market Course</h2></a>
+                        <a><h2 className="cursor-pointer text-white/80" onClick={() => navigate('/pro_trader')}>Pro Trader And Intra Day</h2></a>
+                        <a><h2 className="cursor-pointer text-white/80" onClick={() => navigate('/art_of_investment')}>Investment</h2></a>
+                        <a><h2 className="cursor-pointer text-white/80" onClick={() => navigate('/online_course')}>Online Trading</h2></a>
+                        <a><h2 className="cursor-pointer text-white/80" onClick={() => navigate('/future_trading')}>Future Trading</h2></a>
+                        <a><h2 className="cursor-pointer text-white/80" onClick={() => navigate('/option_trading')}>Option Trading</h2></a>
                     </div>
                     <button className="text-white contactBtn flex gap-1 w-fit items-center px-8 py-[.65rem] rounded-full cursor-pointer "
                         style={menuOpen  ? {color:contactBtnFrom} : {background: `linear-gradient(to right, ${contactBtnFrom}, ${contactBtnTo})`}}

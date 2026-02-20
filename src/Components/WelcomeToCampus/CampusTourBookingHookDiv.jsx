@@ -14,7 +14,11 @@ const CampusTourBookingHookDiv = ({color,from,to}) => {
           <h1 className={`Alatsi lg:text-6xl text-5xl `} style={{color:color}}>Bangalore</h1>
         </div>
         <div className='lg:w-[40%] w-full flex justify-center lg:justify-end items-center'>
-          <button onClick={() => store.handleShow()} className='Alatsi lg:text-xl  rounded-full px-8 py-4 lg:px-12 lg:py-6 text-white bg-linear-to-b from-black to-[#0D8E47] cursor-pointer' style={{backgroundImage: `linear-gradient(to bottom, ${from}, ${to})`}}>Book a Campus Tour</button>
+          <button onClick={() => store.handleShow()} 
+          className='Alatsi lg:text-xl  rounded-full px-8 py-4 lg:px-12 lg:py-6 text-white bg-linear-to-b from-black to-[#0D8E47] cursor-pointer ease-in-out duration-300' 
+          style={{backgroundImage: `linear-gradient(to bottom, ${from}, ${to})`}}
+          onMouseOver={(e) => e.currentTarget.style.boxShadow = `0 0 15px 2px ${color}`} onMouseOut={(e) => e.currentTarget.style.boxShadow = `0 0 0 0`}
+          >Book a Campus Tour</button>
         </div>
       </div>
     </div>

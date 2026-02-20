@@ -59,8 +59,7 @@ const Blogs = ({bgColor}) => {
                                                 <div className='w-full flex flex-col gap-3'>
                                                     <h3 className='Alatsi font-medium text-xl md:text-2xl'>{values.title}</h3>
                                                     <p className='Chivo w-full font-extralight md:leading-6 md:tracking-4 text-[14px] md:text-[16px]'>{values.content}</p>
-                                                    <button className={`Chivo font-extralight text-base px-8 py-2 w-fit h-fit rounded-full 
-                                                         cursor-pointer`} style={{backgroundColor:bgColor}}>
+                                                    <button className={`Chivo font-extralight text-base px-8 py-2 w-fit h-fit rounded-full cursor-pointer mb-2! ease-in-out duration-300`} style={{backgroundColor:bgColor}} onMouseOver={(e) => e.currentTarget.style.boxShadow = `0 0 15px 2px ${bgColor}`} onMouseOut={(e) => e.currentTarget.style.boxShadow = `0 0 0 0`}>
                                                         View More
                                                     </button>
                                                 </div>

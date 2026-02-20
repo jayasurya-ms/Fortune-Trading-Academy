@@ -8,7 +8,7 @@ const StudentReviewCard = ({ data }) => {
     const { name, studentDesig, title, rating, duration, profileImg, thumbnailImg } = data;
 
     return (
-        <div className='w-full max-w-84 h-auto shadow-xs shadow-slate-700/30 rounded-3xl bg-white'>
+        <div className='w-full max-w-84 h-auto shadow-xs shadow-slate-700/30 rounded-3xl bg-white hover:shadow-[0_0_30px_rgba(0,0,0,0.15)] ease-in-out duration-400'>
             <div className='w-full flex flex-col gap-4 px-3 py-4'>
                 {/* Header: Profile Info */}
                 <div className='w-full flex items-center'>

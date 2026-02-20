@@ -20,6 +20,7 @@ import WhyOnlineTrading from '../Components/WhyOnlineTrading/WhyOnlineTrading'
 import { DataCollections } from '../Store/GlobalDataSets'
 import MentorIntro from '../Components/Mentor_Intro/MentorIntro'
 import Content from '../Components/Banner/Content'
+import { Helmet } from 'react-helmet-async'
 
 const contentData =[
     {
@@ -64,12 +65,37 @@ const contentData =[
 const OnlineTradingCourse = () => {
         let textColor ='#2737A2'
         let storeObj = useContext(DataCollections)
+        
+        const handleShow = () => {
+            console.log('inside show');
+    
+        }
+
         useEffect(()=>{
            storeObj.setCurrentPage('OnlineCourse')
         },[])
+
+        const courseSchema = {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Online Trading Course",
+      "description": "Master Call and Put options, hedging strategies, and risk management at Fortune Trading Academy.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Fortune Trading Academy",
+        "sameAs": "https://www.fortunetradingacademy.com"
+      }
+    };
     
     return (
         <div className='w-full h-auto flex flex-col'>
+
+            {/* helmet */}
+            <Helmet>
+              <title>Expert Option Trading | Fortune Trading Academy</title>
+              <script type="application/ld+json">{JSON.stringify(courseSchema)}</script>
+            </Helmet> 
+
             <div className='w-full h-auto'>
                 <Banner MainTitle={'Online Trading Course'} Subtitle={'Online Stock Market Training provides individuals with comprehensive training and resources to develop their skills and knowledge of trading stocks in the financial markets.'} 
                 textFrom={'#EDF2FF'} textTo={'#C1DCFF'} radialFrom={'#212750'} radialTo={'#040612'} borderColor={'#215E86'} btnFrom={'#F5FBFF'} btnTo={'#E2F3FF'} btnColr={'#2737A2'} contactFrom={'#141F77'} contactTo={'#2737A2'}  />
@@ -91,20 +117,23 @@ const OnlineTradingCourse = () => {
                     </div>
                     <div className='w-full h-auto'>
                         <div className='w-full h-auto py-8  flex justify-center items-center'>
-                            <button className='w-fit h-fit Alatsi text-[1rem] md:text-[1.1rem] lg:text-[1.25rem] text-white py-2 px-8 md:px-14 md:py-3.5  lg:py-6 lg:px-15 rounded-full bg-radial-[at_50%_150%] from-[#141F77] to-[#040612] '>Book a Campus Tour</button>
+                            <button onClick={() => storeObj.handleShow()} 
+                            className='cursor-pointer w-fit h-fit Alatsi text-[1rem] md:text-[1.1rem] lg:text-[1.25rem] text-white ease-in-out duration-300 py-2 px-8 md:px-14 md:py-3.5  lg:py-6 lg:px-15 rounded-full bg-radial-[at_50%_150%] from-[#141F77] to-[#040612] '
+                            onMouseOver={(e) => e.currentTarget.style.boxShadow = `0 0 15px 2px #141F77`} onMouseOut={(e) => e.currentTarget.style.boxShadow = `0 0 0 0`}
+                            >Book a Campus Tour</button>
                         </div>
                     </div>
                 </div>
                 <div className='w-full h-auto -mb-12 md:-mb-20 z-10 relative'>
                     <WhyOnlineTrading />
                 </div>
-                <div className='w-full h-auto px-2 md:px-8 z-20 relative'>
+                <div className='w-full h-auto px-0 md:px-8 z-20 relative'>
                     <WhyFTA title={'Equity Course ?'} titleColor={'#2737A2'} />
                 </div>
-                <div className='w-full h-auto flex justify-center items-center md:py-12'>
+                <div className='w-full h-auto flex justify-center items-center'>
                     <MentorIntro from={'#5F7FD659'} to={'#5F7FD640'} textColor={textColor} />
                 </div>
-                <div className='w-full h-auto -mt-120 sm:-mt-85 lg:-mt-40 '>
+                <div className='w-full h-auto'>
                     <Syllabus textColor={'#2737A2'} from={'#141F77'} to={'#040612'} borderColor={'#2737A2'} />
                 </div>
                 <div className='w-full h-auto'>

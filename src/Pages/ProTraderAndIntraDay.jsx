@@ -19,6 +19,7 @@ import WhySwingAndIntraDay from '../Components/ProtraderIntraDay/WhySwingAndIntr
 import { DataCollections } from '../Store/GlobalDataSets'
 import MentorIntro from '../Components/Mentor_Intro/MentorIntro'
 import Content from '../Components/Banner/Content'
+import { Helmet } from 'react-helmet-async'
 
 const contentData =[
     {
@@ -62,7 +63,6 @@ const contentData =[
 
 const ProTraderAndIntraDay = () => {
 
-    let textColor = ''
     let storeObj = useContext(DataCollections)
 
     const handleShow = () => {
@@ -74,8 +74,26 @@ const ProTraderAndIntraDay = () => {
         storeObj.setCurrentPage('IntraDay')
     }, [])
 
+    const proTraderSchema = {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Pro Trader and Intra Day Course",
+      "description": "Advanced intraday trading strategies and professional price action analysis.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Fortune Trading Academy",
+        "url": "https://www.fortunetradingacademy.com"
+      }
+    };
+
     return (
         <div className='w-full h-auto flex flex-col'>
+
+            <Helmet>
+              <title>Pro Trader & Intra Day Mentorship | Fortune Trading Academy</title>
+              <script type="application/ld+json">{JSON.stringify(proTraderSchema)}</script>
+            </Helmet>
+
             <div className='w-full h-auto'>
                 <Banner MainTitle={'Pro Trader Swing And Intra Day'} Subtitle={'Stock trading offers many advantages, including the potential for high returns, liquidity, diversification and accessibility. Stocks have historically offered attractive long-term returns compared to other asset classes, making stock trading a popular choice for growth investors.'}
                     textFrom={'#FFF8DD'} textTo={'#FFF2BB'} radialFrom={'#D5B42D'} radialTo={'#121108'} borderColor={'#D5B42D'} btnFrom={'#FFFBEB'} btnTo={'#FFF8DD'} btnColr={'#AC790D'} contactFrom={'#AC790D'} contactTo={'#D5B42D'} />
@@ -97,21 +115,23 @@ const ProTraderAndIntraDay = () => {
                     </div>
                     <div className='w-full h-auto'>
                         <div className='w-full h-auto py-8  flex justify-center items-center'>
-                            <button className='w-fit h-fit cursor-pointer Alatsi text-[1rem] md:text-[1.1rem] lg:text-[1.25rem] text-white py-2 px-8 md:px-14 md:py-3.5  lg:py-5 lg:px-20 rounded-full bg-radial-[at_50%_150%] from-[#D5B42D] to-[#121108] '
-                                onClick={() => storeObj.handleShow()}>Enroll Now</button>
+                            <button className=' w-fit h-fit cursor-pointer Alatsi text-[1rem] md:text-[1.1rem] lg:text-[1.25rem] text-white py-2 px-8 md:px-14 md:py-3.5  lg:py-5 lg:px-20 rounded-full bg-radial-[at_50%_150%] from-[#D5B42D] to-[#121108] '
+                                onClick={() => storeObj.handleShow()}
+                                onMouseOver={(e) => e.currentTarget.style.boxShadow = `0 0 15px 2px #D5B42D`} onMouseOut={(e) => e.currentTarget.style.boxShadow = `0 0 0 0`}
+                                >Enroll Now</button>
                         </div>
                     </div>
                 </div>
-                <div className='w-full h-auto  md:px-0.5'>
+                <div className='w-full h-auto'>
                     <WhySwingAndIntraDay />
                 </div>
-                <div className='w-full h-auto px-2 md:px-8'>
+                <div className='w-full h-auto md:p-8'>
                     <WhyFTA title={'Equity Course ?'} titleColor={'#D5B42D'} />
                 </div>
-                <div className='w-full h-auto flex justify-center items-center md:py-12'>
-                    <MentorIntro from={'#D4C35A59'} to={'#D4C35A40'} textColor={'#D5B42D'} />
+                <div className='w-full h-auto flex justify-center items-center md:-12'>
+                    <MentorIntro from={'#988020'} to={'#988020'} textColor={'#D5B42D'} />
                 </div>
-                <div className='w-full h-auto -mt-120 sm:-mt-85 lg:-mt-40 '>
+                <div className='w-full h-auto'>
                     <Syllabus textColor={'#D5B42D'} from={'#D5B42D'} to={'#121108'} borderColor={'#D5B42D'} />
                 </div>
                 <div className='w-full h-auto'>
@@ -131,7 +151,7 @@ const ProTraderAndIntraDay = () => {
                 </div>
             </div>
             <div className='w-full h-auto'>
-                <Footer textColor={'#2076AF'} bgColor={'#0E171C'} />
+                <Footer textColor={'#D5B42D'} bgColor={'#121108'} />
             </div>
 
         </div>

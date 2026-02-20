@@ -141,7 +141,7 @@ const Banner = ({ MainTitle, Subtitle, btnFrom, textFrom, textTo, radialFrom, ra
                                 </div>
                             </div>
                             <button 
-                                className={`Roboto w-fit h-auto px-8 py-1 md:px-18 md:py-3 border-2 rounded-full text-[1rem] md:text-xl lg:text-2xl cursor-pointer font-bold transition-all active:scale-95`} 
+                                className={`Roboto w-fit h-auto px-8 py-1 md:px-18 md:py-3 border-2 rounded-full text-[1rem] md:text-xl lg:text-2xl cursor-pointer font-bold transition-all active:scale-95 shadow-white/40 hover:shadow-lg`} 
                                 style={{ background: `linear-gradient(to right, ${btnFrom}, ${btnTo})`, color: btnColr }}
                                 onClick={() => store.handleShow()}
                             >

@@ -11,6 +11,7 @@ import ContactUsCombined from '../Components/GetInTouch/ContactUsCombined';
 import Footer from '../Components/Footer/Footer';
 import { DataCollections } from '../Store/GlobalDataSets';
 import MentorIntro from '../Components/Mentor_Intro/MentorIntro';
+import { Helmet } from 'react-helmet-async';
 
 
 const FTA_StockMarket_Beginner = () => {
@@ -67,9 +68,27 @@ const FTA_StockMarket_Beginner = () => {
         slidesToScroll: 1,
     };
 
+    const beginnerSchema = {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Stock Market Course For Beginners",
+      "description": "Foundational training in investing, risk management, and asset accumulation for new investors.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Fortune Trading Academy",
+        "url": "https://www.fortunetradingacademy.com"
+      }
+    };
 
     return (
         <div className='w-full h-auto flex flex-col'>
+
+            <Helmet>
+              <title>Stock Market Course for Beginners | Fortune Trading Academy</title>
+              <meta name="description" content="Start your trading journey with our beginner mentorship program in Bangalore." />
+              <script type="application/ld+json">{JSON.stringify(beginnerSchema)}</script>
+            </Helmet>
+
             <div className='w-full h-auto z-10'>
                 <Banner MainTitle={'Stock Market Course For Beginners'} Subtitle={'By Learning Stock Marketing Professionally - you have a chance to generate extra income, whether you are a homemaker. Job seeker, or a Businessman.'}
                     textFrom={'#E1FFF1'} textTo={'#89C1B0'} radialFrom={'#0FCD65'} radialTo={'#08120B'} borderColor={'#0FCD65'} btnFrom={'#FBF5FF'} btnTo={'#D5FFE2'} btnColr={'#0BB759'} contactFrom={'#06A44D'} contactTo={'#18CC69'} />
@@ -166,7 +185,9 @@ const FTA_StockMarket_Beginner = () => {
                     <div className='w-full h-auto'>
                         <div className='w-full h-auto py-8  flex justify-center items-center'>
                             <button className='w-fit h-fit cursor-pointer Alatsi text-[1.25rem] text-white py-4 px-14 rounded-full bg-radial-[at_50%_150%] from-[#0FCD65] to-[#08120B] '
-                                onClick={() => storeObj.handleShow()}>Enroll Now</button>
+                                onClick={() => storeObj.handleShow()}
+                                onMouseOver={(e) => e.currentTarget.style.boxShadow = `0 0 15px 2px #0FCD65`} onMouseOut={(e) => e.currentTarget.style.boxShadow = `0 0 0 0`}
+                                >Enroll Now</button>
                         </div>
                     </div>
                 </div>

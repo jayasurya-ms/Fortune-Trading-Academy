@@ -1,6 +1,5 @@
 import React, { useContext, useEffect } from 'react'
 import WhyFTA from '../Components/Art Of Investment/WhyFTA'
-import WhyAOI from '../Components/Why Art Of Investment/WhyAOI'
 import Syllabus from '../Components/Syllabus/Syllabus'
 import CampusTourBookingHookDiv from '../Components/WelcomeToCampus/CampusTourBookingHookDiv'
 import Blogs from '../Components/Blog/Blogs'
@@ -9,22 +8,45 @@ import YoutubVideosComponent from '../Components/YoutubeVideos/YoutubVideosCompo
 import ContactUsCombined from '../Components/GetInTouch/ContactUsCombined'
 import Footer from '../Components/Footer/Footer'
 import Banner from '../Components/Banner/Banner'
-import WhySwingAndIntraDay from '../Components/ProtraderIntraDay/WhySwingAndIntraDay'
-import WhyOnlineTrading from '../Components/WhyOnlineTrading/WhyOnlineTrading'
 import WhyDerivativeTrading from '../Components/DerivativeFutureTrading/WhyDerivativeTrading'
 import { DataCollections } from '../Store/GlobalDataSets'
 import MentorIntro from '../Components/Mentor_Intro/MentorIntro'
+import { Helmet } from 'react-helmet-async'
 
 const ExpertFutureTrading = () => {
     let textColor = '#96170E'
 
     let storeObj = useContext(DataCollections)
+
+    const handleShow = () => {
+        console.log('inside show');
+    }
+
     useEffect(()=>{
         storeObj.setCurrentPage('FutureTrading')
     },[])
 
+    const futureSchema = {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Expert Future Trading",
+      "description": "Comprehensive training on derivative markets and future trading instruments.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Fortune Trading Academy",
+        "url": "https://www.fortunetradingacademy.com"
+      }
+    };
+
     return (
         <div className='w-full h-auto flex flex-col'>
+
+            {/* helmet */}
+            <Helmet>
+              <title>Expert Option Trading | Fortune Trading Academy</title>
+              <script type="application/ld+json">{JSON.stringify(futureSchema)}</script>
+            </Helmet> 
+
             <div className='w-full h-auto'>
                 <Banner MainTitle={'Expert Future Trading'} Subtitle={'Online Stock Market Training provides individuals with comprehensive training and resources to develop their skills and knowledge of trading stocks in the financial markets.'}
                  textFrom={'#FFF5F4'} textTo={'#FFE5E4'} radialFrom={'#96170E'} radialTo={'#100903'} borderColor={'#96170E'} btnFrom={'#FFF3F2'} btnTo={'#FFE5E4'} btnColr={'#96170E'} contactFrom={'#72030E'} contactTo={'#96170E'}  />
@@ -62,21 +84,24 @@ const ExpertFutureTrading = () => {
                         </div>
                     </div>
                     <div className='w-full h-auto'>
-                        <div className='w-full h-auto py-16  flex justify-center items-center'>
-                            <button className='w-fit h-fit Alatsi text-[1rem] md:text-[1.1rem] lg:text-[1.25rem] text-white py-2 px-8 md:px-14 md:py-3.5  lg:py-6 lg:px-15 rounded-full bg-radial-[at_50%_150%] from-[#96170E] to-[#100903] '>Book a Campus Tour</button>
+                        <div className='w-full h-auto py-16  flex justify-center items-center '>
+                            <button onClick={() => storeObj.handleShow()} 
+                            className='cursor-pointer  w-fit h-fit Alatsi text-[1rem] md:text-[1.1rem] lg:text-[1.25rem] text-white py-2 px-8 md:px-14 md:py-3.5 ease-in-out duration-300  lg:py-6 lg:px-15 rounded-full bg-radial-[at_50%_150%] from-[#96170E] to-[#100903] '
+                            onMouseOver={(e) => e.currentTarget.style.boxShadow = `0 0 15px 2px #96170E`} onMouseOut={(e) => e.currentTarget.style.boxShadow = `0 0 0 0`}
+                            >Book a Campus Tour</button>
                         </div>
                     </div>
                 </div>
                 <div className='w-full h-auto '>
                     <WhyDerivativeTrading/>
                 </div>
-                <div className='w-full h-auto px-2 md:px-8 md:py-12'>
+                <div className='w-full h-auto p-8'>
                     <WhyFTA title={'Art of Investment Course ?'} titleColor={textColor} />
                 </div>
-                <div className='w-full h-auto flex justify-center items-center md:py-12'>
+                <div className='w-full h-auto flex justify-center items-center md:pb-12'>
                     <MentorIntro from={'#C96F6759'} to={'#C96F6733'} textColor={textColor} />
                 </div>
-                <div className='w-full h-auto -mt-120 sm:-mt-85 lg:-mt-40 '>
+                <div className='w-full h-auto'>
                     <Syllabus textColor={textColor} from={textColor} to={'#100903'} borderColor={textColor} />
                 </div>
                 <div className='w-full h-auto'>

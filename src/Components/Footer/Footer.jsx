@@ -45,16 +45,16 @@ const Footer = ({ textColor, bgColor }) => {
                     <div className='w-full lg:w-[70%] h-auto  text-nowrap flex flex-col md:flex-row justify-between max-xl:gap-4 gap-8 m-auto text-white  xl:justify-between'>
                         <div className='w-full md:w-3/7 h-auto  flex flex-col  leading-10'>
                             <h2 className={`font-semibold text-[1.3rem]`} style={{ color: textColor }}>Courses</h2>
-                            <a href="" className='text-[.9rem] lg:text-[1.1rem] text-white/60 font-light cursor-pointer' onClick={() => navigate('/StockMarket_Beginners')}><h2>Stock Market Course</h2></a>
-                            <a href="" className='text-[.9rem] lg:text-[1.1rem] text-white/60 font-light cursor-pointer' onClick={() => navigate('/IntraDayTrading')}><h2>Pro Trader And Intra Day</h2></a>
-                            <a href="" className='text-[.9rem] lg:text-[1.1rem] text-white/60 font-light cursor-pointer' onClick={() => navigate('/ArtOfInvestment')}><h2>Investment</h2></a>
-                            <a href="" className='text-[.9rem] lg:text-[1.1rem] text-white/60 font-light cursor-pointer' onClick={() => navigate('/OnlineCourse')}><h2>Online Trading</h2></a>
-                            <a href="" className='text-[.9rem] lg:text-[1.1rem] text-white/60 font-light cursor-pointer' onClick={() => navigate('/FutureTrading')}><h2>Future Trading</h2></a>
-                            <a href="" className='text-[.9rem] lg:text-[1.1rem] text-white/60 font-light cursor-pointer' onClick={() => navigate('/OptionTrading')}><h2>Option Trading</h2></a>
+                            <a href="" className='text-[.9rem] lg:text-[1.1rem] text-white/60 font-light cursor-pointer' onClick={() => navigate('/stock_market')}><h2>Stock Market Course</h2></a>
+                            <a href="" className='text-[.9rem] lg:text-[1.1rem] text-white/60 font-light cursor-pointer' onClick={() => navigate('/pro_trader')}><h2>Pro Trader And Intra Day</h2></a>
+                            <a href="" className='text-[.9rem] lg:text-[1.1rem] text-white/60 font-light cursor-pointer' onClick={() => navigate('/art_of_investment')}><h2>Investment</h2></a>
+                            <a href="" className='text-[.9rem] lg:text-[1.1rem] text-white/60 font-light cursor-pointer' onClick={() => navigate('/online_course')}><h2>Online Trading</h2></a>
+                            <a href="" className='text-[.9rem] lg:text-[1.1rem] text-white/60 font-light cursor-pointer' onClick={() => navigate('/future_trading')}><h2>Future Trading</h2></a>
+                            <a href="" className='text-[.9rem] lg:text-[1.1rem] text-white/60 font-light cursor-pointer' onClick={() => navigate('/option_trading')}><h2>Option Trading</h2></a>
                         </div>
                         <div className='w-full md:w-2/7 h-auto leading-10 '>
                             <h2 className={`font-semibold text-[1.3rem]`} style={{ color: textColor }}>Company</h2>
-                            <a href="" className='text-[.9rem] lg:text-[1.1rem] text-white/60 font-light cursor-pointer' onClick={() => navigate('/AboutUs')}><h2>About Us</h2></a>
+                            <a href="" className='text-[.9rem] lg:text-[1.1rem] text-white/60 font-light cursor-pointer' onClick={() => navigate('/about_us')}><h2>About Us</h2></a>
                             <a href="" className='text-[.9rem] lg:text-[1.1rem] text-white/60 font-light cursor-pointer' onClick={() => navigate('/#')}><h2>Careers</h2></a>
                             <a href="" className='text-[.9rem] lg:text-[1.1rem] text-white/60 font-light cursor-pointer' onClick={() => navigate('/#')}><h2>Blog</h2></a>
                             <a href="" className='text-[.9rem] lg:text-[1.1rem] text-white/60 font-light cursor-pointer' onClick={() => navigate('/#')}><h2>Press Kit</h2></a>
