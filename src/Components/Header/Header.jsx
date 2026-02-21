@@ -42,7 +42,7 @@ const Header = ({ contactBtnFrom, contactBtnTo }) => {
                     </div>
                     <button className="text-white contactBtn flex gap-1 w-fit items-center px-8 py-[.65rem] rounded-full cursor-pointer "
                         style={menuOpen  ? {color:contactBtnFrom} : {background: `linear-gradient(to right, ${contactBtnFrom}, ${contactBtnTo})`}}
-
+                        onClick={() => store.handleShow()}
                     >
                         {menuOpen ? '' : <FiPhone className="text-xl" /> }
                         Contact Us

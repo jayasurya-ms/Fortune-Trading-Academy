@@ -136,7 +136,7 @@ const homeSchema = {
                 <div className='w-full h-auto'>
                     <KeyTakeaway  />
                 </div>
-                <div className='w-full h-auto px-5'>
+                <div className='w-full h-auto'>
                     <DidYouKnow  />
                 </div>
                 <div className='w-full h-auto'>

@@ -49,10 +49,6 @@ const Banner = ({ MainTitle, Subtitle, btnFrom, textFrom, textTo, radialFrom, ra
     return (
         <div className='w-full h-auto flex flex-col bg-transparent relative overflow-hidden'>
             
-            {/* ZERO-FLICKER STACK: 
-                We render ALL images at once. The browser GPU handles the 
-                opacity transition, meaning zero "white flashes" or "reloads".
-            */}
             <div className="absolute inset-0 z-10 w-full h-full bg-[#080B12]">
                 {Object.entries(BANNER_MAP).map(([pageName, imgSrc]) => (
                     <img 
@@ -70,7 +66,7 @@ const Banner = ({ MainTitle, Subtitle, btnFrom, textFrom, textTo, radialFrom, ra
             <div className='w-full h-full opacity-10 z-90 absolute' style={{ backgroundImage: `radial-gradient(circle at 50% 300%, ${radialFrom}, ${radialTo})` }}></div>
             
             {/* Header Div */}
-            <div className='w-full h-auto relative z-1000'>
+            <div className='w-full h-auto relative z-100 md:z-1000'>
                 <Header contactBtnFrom={contactFrom} contactBtnTo={contactTo} />
             </div>
 

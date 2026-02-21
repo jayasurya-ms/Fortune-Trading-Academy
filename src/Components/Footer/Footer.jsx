@@ -57,7 +57,7 @@ const Footer = ({ textColor, bgColor }) => {
                             <h2 className={`font-semibold text-[1.3rem]`} style={{ color: textColor }}>Company</h2>
                             <a href="" className='text-[.9rem] lg:text-[1.1rem] text-white/60 font-light cursor-pointer' onClick={() => navigate('/about_us')}><h2>About Us</h2></a>
                             <a href="" className='text-[.9rem] lg:text-[1.1rem] text-white/60 font-light cursor-pointer' onClick={() => navigate('/#')}><h2>Careers</h2></a>
-                            <a href="" className='text-[.9rem] lg:text-[1.1rem] text-white/60 font-light cursor-pointer' onClick={() => navigate('/#')}><h2>Blog</h2></a>
+                            <a href="" className='text-[.9rem] lg:text-[1.1rem] text-white/60 font-light cursor-pointer' onClick={() => navigate('/blogs')}><h2>Blogs</h2></a>
                             <a href="" className='text-[.9rem] lg:text-[1.1rem] text-white/60 font-light cursor-pointer' onClick={() => navigate('/#')}><h2>Press Kit</h2></a>
                         </div>
                         <div className='w-1/2 h-auto md:w-1/2 leading-10'>

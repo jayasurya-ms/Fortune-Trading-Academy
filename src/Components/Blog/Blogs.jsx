@@ -6,9 +6,9 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Blogs = ({bgColor}) => {
     let Blog = [
-        { image: `${blogimage1}`, title: 'Features of Our Trading Courses!', content: 'Our aim is to ensure a proper trading/investing skillset that is required in the cut-throat competitive financial markets. You’ll be able to acquire 360-degree knowledge & trading mindset to become a successful trader/investor' },
-        { image: `${blogimage1}`, title: 'Features of Our Trading Courses!', content: 'Our aim is to ensure a proper trading/investing skillset that is required in the cut-throat competitive financial markets. You’ll be able to acquire 360-degree knowledge & trading mindset to become a successful trader/investor' },
-        { image: `${blogimage1}`, title: 'Features of Our Trading Courses!', content: 'Our aim is to ensure a proper trading/investing skillset that is required in the cut-throat competitive financial markets. You’ll be able to acquire 360-degree knowledge & trading mindset to become a successful trader/investor' },
+        { image: `${blogimage1}`, title: 'Features of Our Trading Courses!', content: 'Our aim is to ensure a proper trading/investing skillset that is required in the cut-throat competitive financial markets. You’ll be able to acquire 360-degree' },
+        { image: `${blogimage1}`, title: 'Features of Our Trading Courses!', content: 'Our aim is to ensure a proper trading/investing skillset that is required in the cut-throat competitive financial markets. You’ll be able to acquire 360-degree' },
+        { image: `${blogimage1}`, title: 'Features of Our Trading Courses!', content: 'Our aim is to ensure a proper trading/investing skillset that is required in the cut-throat competitive financial markets. You’ll be able to acquire 360-degree' },
     ]
 
     let color = '#2076AF'

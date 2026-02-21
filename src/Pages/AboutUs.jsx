@@ -14,7 +14,7 @@ import MentorIntro from '../Components/Mentor_Intro/MentorIntro'
 import { Helmet } from 'react-helmet-async'
 import VisionMission from '../Components/AboutUs/VisionMission'
 
-const AboutUs = ({ btnColor }) => {
+const AboutUs = () => {
 
     let storeObj = useContext(DataCollections)
     useEffect(()=>{

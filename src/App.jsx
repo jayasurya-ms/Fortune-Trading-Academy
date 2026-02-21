@@ -10,6 +10,8 @@ import ExpertOptionTrading from './Pages/ExpertOptionTrading'
 import FTAMainLandingPage from './Pages/FTAMainLandingPage'
 import EnrolFormModel from './Components/BootstrapModels/EnrolFormModel'
 import AboutUs from './Pages/AboutUs'
+import BlogsPage from './Pages/BlogsPage'
+import BlogDetails from './Components/Blog/BlogDetails'
 
 function App() {
 
@@ -26,6 +28,8 @@ function App() {
           <Route path='/online_course' element={<OnlineTradingCourse />} />
           <Route path='/pro_trader' element={<ProTraderAndIntraDay />} />
           <Route path='/about_us' element={<AboutUs />}/>
+          <Route path='/blogs' element={<BlogsPage />} />
+          <Route path='/blog/:slug' element={<BlogDetails />} />
         </Routes>
       </BrowserRouter>
     </>
